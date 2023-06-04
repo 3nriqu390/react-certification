@@ -1,11 +1,18 @@
-import React from "react";
-import "./style.css";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import QuizMakerContainer from './QuizMakerContainer';
+import QuizResults from './QuizResults';
+import './App.css';
 
-export default function App() {
+function App() {
   return (
-    <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/results" element={<QuizResults />} />
+        <Route path="/" element={<QuizMakerContainer />} />
+      </Routes>
+    </Router>
   );
 }
+
+export default App;
+
